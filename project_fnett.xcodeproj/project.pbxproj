@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF021153A22B7004FFDEA /* UIKit.framework */; };
+		11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF023153A22B7004FFDEA /* Foundation.framework */; };
+		11CFF026153A22B7004FFDEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF025153A22B7004FFDEA /* CoreGraphics.framework */; };
+		11CFF02C153A22B7004FFDEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11CFF02A153A22B7004FFDEA /* InfoPlist.strings */; };
+		11CFF02E153A22B7004FFDEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF02D153A22B7004FFDEA /* main.m */; };
+		11CFF032153A22B8004FFDEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF031153A22B8004FFDEA /* AppDelegate.m */; };
+		11CFF035153A22B8004FFDEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CFF033153A22B8004FFDEA /* MainStoryboard.storyboard */; };
+		11CFF038153A22B8004FFDEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF037153A22B8004FFDEA /* ViewController.m */; };
+		11CFF040153A22B8004FFDEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */; };
+		11CFF041153A22B8004FFDEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF021153A22B7004FFDEA /* UIKit.framework */; };
+		11CFF042153A22B8004FFDEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF023153A22B7004FFDEA /* Foundation.framework */; };
+		11CFF04A153A22B8004FFDEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11CFF048153A22B8004FFDEA /* InfoPlist.strings */; };
+		11CFF04D153A22B8004FFDEA /* project_fnettTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF04C153A22B8004FFDEA /* project_fnettTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11CFF043153A22B8004FFDEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11CFF014153A22B7004FFDEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11CFF01C153A22B7004FFDEA;
+			remoteInfo = project_fnett;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11CFF01D153A22B7004FFDEA /* project_fnett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project_fnett.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CFF021153A22B7004FFDEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		11CFF023153A22B7004FFDEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		11CFF025153A22B7004FFDEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */ = {isa = PBXFileReference; path = "project_fnett-Info.plist"; sourceTree = "<group>"; };
+		11CFF02B153A22B7004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11CFF02D153A22B7004FFDEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11CFF02F153A22B7004FFDEA /* project_fnett-Prefix.pch */ = {isa = PBXFileReference; path = "project_fnett-Prefix.pch"; sourceTree = "<group>"; };
+		11CFF030153A22B8004FFDEA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		11CFF031153A22B8004FFDEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11CFF034153A22B8004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		11CFF036153A22B8004FFDEA /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		11CFF037153A22B8004FFDEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		11CFF03E153A22B8004FFDEA /* project_fnettTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project_fnettTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		11CFF047153A22B8004FFDEA /* project_fnettTests-Info.plist */ = {isa = PBXFileReference; path = "project_fnettTests-Info.plist"; sourceTree = "<group>"; };
+		11CFF049153A22B8004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11CFF04B153A22B8004FFDEA /* project_fnettTests.h */ = {isa = PBXFileReference; path = project_fnettTests.h; sourceTree = "<group>"; };
+		11CFF04C153A22B8004FFDEA /* project_fnettTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = project_fnettTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11CFF01A153A22B7004FFDEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */,
+				11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */,
+				11CFF026153A22B7004FFDEA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11CFF03A153A22B8004FFDEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF040153A22B8004FFDEA /* SenTestingKit.framework in Frameworks */,
+				11CFF041153A22B8004FFDEA /* UIKit.framework in Frameworks */,
+				11CFF042153A22B8004FFDEA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11CFF012153A22B7004FFDEA = {
+			isa = PBXGroup;
+			children = (
+				11CFF027153A22B7004FFDEA /* project_fnett */,
+				11CFF045153A22B8004FFDEA /* project_fnettTests */,
+				11CFF020153A22B7004FFDEA /* Frameworks */,
+				11CFF01E153A22B7004FFDEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11CFF01E153A22B7004FFDEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF01D153A22B7004FFDEA /* project_fnett.app */,
+				11CFF03E153A22B8004FFDEA /* project_fnettTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11CFF020153A22B7004FFDEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF021153A22B7004FFDEA /* UIKit.framework */,
+				11CFF023153A22B7004FFDEA /* Foundation.framework */,
+				11CFF025153A22B7004FFDEA /* CoreGraphics.framework */,
+				11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11CFF027153A22B7004FFDEA /* project_fnett */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF030153A22B8004FFDEA /* AppDelegate.h */,
+				11CFF031153A22B8004FFDEA /* AppDelegate.m */,
+				11CFF033153A22B8004FFDEA /* MainStoryboard.storyboard */,
+				11CFF036153A22B8004FFDEA /* ViewController.h */,
+				11CFF037153A22B8004FFDEA /* ViewController.m */,
+				11CFF028153A22B7004FFDEA /* Supporting Files */,
+			);
+			path = project_fnett;
+			sourceTree = "<group>";
+		};
+		11CFF028153A22B7004FFDEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */,
+				11CFF02A153A22B7004FFDEA /* InfoPlist.strings */,
+				11CFF02D153A22B7004FFDEA /* main.m */,
+				11CFF02F153A22B7004FFDEA /* project_fnett-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11CFF045153A22B8004FFDEA /* project_fnettTests */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF04B153A22B8004FFDEA /* project_fnettTests.h */,
+				11CFF04C153A22B8004FFDEA /* project_fnettTests.m */,
+				11CFF046153A22B8004FFDEA /* Supporting Files */,
+			);
+			path = project_fnettTests;
+			sourceTree = "<group>";
+		};
+		11CFF046153A22B8004FFDEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11CFF047153A22B8004FFDEA /* project_fnettTests-Info.plist */,
+				11CFF048153A22B8004FFDEA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11CFF01C153A22B7004FFDEA /* project_fnett */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11CFF050153A22B8004FFDEA /* Build configuration list for PBXNativeTarget "project_fnett" */;
+			buildPhases = (
+				11CFF019153A22B7004FFDEA /* Sources */,
+				11CFF01A153A22B7004FFDEA /* Frameworks */,
+				11CFF01B153A22B7004FFDEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = project_fnett;
+			productName = project_fnett;
+			productReference = 11CFF01D153A22B7004FFDEA /* project_fnett.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11CFF03D153A22B8004FFDEA /* project_fnettTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11CFF053153A22B8004FFDEA /* Build configuration list for PBXNativeTarget "project_fnettTests" */;
+			buildPhases = (
+				11CFF039153A22B8004FFDEA /* Sources */,
+				11CFF03A153A22B8004FFDEA /* Frameworks */,
+				11CFF03B153A22B8004FFDEA /* Resources */,
+				11CFF03C153A22B8004FFDEA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11CFF044153A22B8004FFDEA /* PBXTargetDependency */,
+			);
+			name = project_fnettTests;
+			productName = project_fnettTests;
+			productReference = 11CFF03E153A22B8004FFDEA /* project_fnettTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11CFF014153A22B7004FFDEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 11CFF017153A22B7004FFDEA /* Build configuration list for PBXProject "project_fnett" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 11CFF012153A22B7004FFDEA;
+			productRefGroup = 11CFF01E153A22B7004FFDEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11CFF01C153A22B7004FFDEA /* project_fnett */,
+				11CFF03D153A22B8004FFDEA /* project_fnettTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11CFF01B153A22B7004FFDEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF02C153A22B7004FFDEA /* InfoPlist.strings in Resources */,
+				11CFF035153A22B8004FFDEA /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11CFF03B153A22B8004FFDEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF04A153A22B8004FFDEA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11CFF03C153A22B8004FFDEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11CFF019153A22B7004FFDEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF02E153A22B7004FFDEA /* main.m in Sources */,
+				11CFF032153A22B8004FFDEA /* AppDelegate.m in Sources */,
+				11CFF038153A22B8004FFDEA /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11CFF039153A22B8004FFDEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CFF04D153A22B8004FFDEA /* project_fnettTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11CFF044153A22B8004FFDEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11CFF01C153A22B7004FFDEA /* project_fnett */;
+			targetProxy = 11CFF043153A22B8004FFDEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11CFF02A153A22B7004FFDEA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11CFF02B153A22B7004FFDEA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		11CFF033153A22B8004FFDEA /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11CFF034153A22B8004FFDEA /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		11CFF048153A22B8004FFDEA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11CFF049153A22B8004FFDEA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11CFF04E153A22B8004FFDEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11CFF04F153A22B8004FFDEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11CFF051153A22B8004FFDEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project_fnett/project_fnett-Prefix.pch";
+				INFOPLIST_FILE = "project_fnett/project_fnett-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		11CFF052153A22B8004FFDEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project_fnett/project_fnett-Prefix.pch";
+				INFOPLIST_FILE = "project_fnett/project_fnett-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		11CFF054153A22B8004FFDEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/project_fnett.app/project_fnett";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project_fnett/project_fnett-Prefix.pch";
+				INFOPLIST_FILE = "project_fnettTests/project_fnettTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		11CFF055153A22B8004FFDEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/project_fnett.app/project_fnett";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "project_fnett/project_fnett-Prefix.pch";
+				INFOPLIST_FILE = "project_fnettTests/project_fnettTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11CFF017153A22B7004FFDEA /* Build configuration list for PBXProject "project_fnett" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11CFF04E153A22B8004FFDEA /* Debug */,
+				11CFF04F153A22B8004FFDEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11CFF050153A22B8004FFDEA /* Build configuration list for PBXNativeTarget "project_fnett" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11CFF051153A22B8004FFDEA /* Debug */,
+				11CFF052153A22B8004FFDEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		11CFF053153A22B8004FFDEA /* Build configuration list for PBXNativeTarget "project_fnettTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11CFF054153A22B8004FFDEA /* Debug */,
+				11CFF055153A22B8004FFDEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11CFF014153A22B7004FFDEA /* Project object */;
+}
