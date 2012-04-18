@@ -32,9 +32,10 @@
     [commandsArray addObject:@"DISABLE_CONNECTION"];
     [commandsArray addObject:@"DISCONNECT_CONFIRMED"];
     [commandsArray addObject:@""];
-    textFromServer.editable = NO;
     textFromServer.layer.borderWidth = 1.0f;
     textFromServer.layer.borderColor = [[UIColor blackColor] CGColor];
+    [textFromServer setDelegate:self];
+    [textFromServer setContentSize:CGSizeMake(320, 40)];
     [message setDelegate:self];
     [self.view bringSubviewToFront:message];
     [self.view bringSubviewToFront:send];
@@ -43,6 +44,7 @@
     [commands setDelegate:self];
     [self.view addSubview:commands];
     [progress setCenter:textFromServer.center];
+    labelY = 20;
 }
 
 - (void)viewDidUnload
@@ -248,7 +250,18 @@
     message.text = [commandsArray objectAtIndex:row];
 }
 - (void)appendTextView:(NSString *)text{
-    textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
+    //Set message
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon3.png"]];
+    [imageview setFrame:CGRectMake(2, labelY+5, 15, 15)];
+    [textFromServer addSubview:imageview];
+    UILabel *temp = [[UILabel alloc] initWithFrame:CGRectMake(20, labelY, 280, 40)];
+    [temp setText:text];
+    temp.numberOfLines = 0;
+    [temp sizeToFit];
+    labelY += temp.frame.size.height+20;
+    [textFromServer setContentSize:CGSizeMake(320, labelY+20)];
+    [textFromServer addSubview:temp]; 
+    //textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
 }
 
 - (IBAction)showPickerView:(id)sender{

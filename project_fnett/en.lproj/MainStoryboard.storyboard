@@ -19,13 +19,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jC9-Qi-uZp">
-                                <rect key="frame" x="-1" y="0.0" width="322" height="357"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="Teo-eC-HK0">
                                 <rect key="frame" x="142" y="179" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,6 +39,11 @@
                                     <action selector="sendMsg:" destination="blu-ea-Zkp" eventType="touchUpInside" id="3Ps-57-GZR"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="e0c-Cp-eib">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -68,7 +66,7 @@
                         <outlet property="openclose" destination="vP3-Uq-009" id="S4M-uU-bGt"/>
                         <outlet property="progress" destination="Teo-eC-HK0" id="miG-H2-rb4"/>
                         <outlet property="send" destination="bsD-uX-Avv" id="XOW-KS-pKe"/>
-                        <outlet property="textFromServer" destination="jC9-Qi-uZp" id="JmJ-Uz-Su8"/>
+                        <outlet property="textFromServer" destination="e0c-Cp-eib" id="jEa-qS-gBI"/>
                     </connections>
                 </viewController>
             </objects>
@@ -78,7 +76,9 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P59-Oi-FWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="d1B-gg-tzc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kyd-nz-nu6">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="kyd-nz-nu6">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -215,7 +215,7 @@
                 <relationship kind="outlet" name="openclose" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="progress" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="send" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textFromServer" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textFromServer" candidateClass="UIScrollView"/>
             </relationships>
         </class>
     </classes>
