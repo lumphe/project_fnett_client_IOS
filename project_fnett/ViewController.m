@@ -84,7 +84,7 @@
     if([oStream hasSpaceAvailable] && state == 2){
         [self sendMsgWithString:message.text];
         NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
-        [self appendTextView:[NSString stringWithFormat:@"%@: %@\n",[currentDefault stringForKey:@"nickname"], message.text]];
+        [self userAppendTextView:[NSString stringWithFormat:@"%@: %@\n",[currentDefault stringForKey:@"nickname"], message.text]];
         [message setText:@""];
     }else if(state == 0){
         [progress startAnimating];
@@ -252,15 +252,59 @@
 - (void)appendTextView:(NSString *)text{
     //Set message
     UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon3.png"]];
-    [imageview setFrame:CGRectMake(2, labelY+5, 15, 15)];
-    [textFromServer addSubview:imageview];
-    UILabel *temp = [[UILabel alloc] initWithFrame:CGRectMake(20, labelY, 280, 40)];
+    [imageview setFrame:CGRectMake(3, 5, 15, 15)];
+    //[textFromServer addSubview:imageview];
+    
+    UILabel *temp = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 160, 40)];
+    [temp setFont:[UIFont fontWithName:@"Arial" size:12]];
     [temp setText:text];
     temp.numberOfLines = 0;
     [temp sizeToFit];
-    labelY += temp.frame.size.height+20;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(3, labelY, 185, temp.frame.size.height+10)];
+    [view.layer setCornerRadius:5.0f];
+    [view.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [view.layer setBorderWidth:1.5f];
+    /*[view.layer setShadowColor:[UIColor blackColor].CGColor];
+    [view.layer setShadowOpacity:0.8];
+    [view.layer setShadowRadius:3.0];
+    [view.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    */
+    labelY += view.frame.size.height+20;
+    [view addSubview:temp];
+    [view addSubview:imageview];
+    
     [textFromServer setContentSize:CGSizeMake(320, labelY+20)];
-    [textFromServer addSubview:temp]; 
+    [textFromServer addSubview:view]; 
+    
+    //textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
+}
+
+- (void)userAppendTextView:(NSString *)text{
+    //Set message
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon3.png"]];
+    [imageview setFrame:CGRectMake(167, 5, 15, 15)];
+    //[textFromServer addSubview:imageview];
+    
+    UILabel *temp = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 160, 40)];
+    [temp setFont:[UIFont fontWithName:@"Arial" size:12]];
+    [temp setText:text];
+    temp.numberOfLines = 0;
+    [temp sizeToFit];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(132, labelY, 185, temp.frame.size.height+10)];
+    [view.layer setCornerRadius:5.0f];
+    [view.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [view.layer setBorderWidth:1.5f];
+    
+    labelY += view.frame.size.height+20;
+    
+    [view addSubview:temp];
+    [view addSubview:imageview];
+    
+    [textFromServer setContentSize:CGSizeMake(320, labelY+20)];
+    [textFromServer addSubview:view];
+    
     //textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
 }
 

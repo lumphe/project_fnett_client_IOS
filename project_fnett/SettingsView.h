@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsView : UITableViewController <UITextFieldDelegate>{
+@interface SettingsView : UITableViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     IBOutlet UITextField *ipadress;
     IBOutlet UITextField *nickname;
-    
+    UIImage *userImage;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *ipadress;
 @property (nonatomic, retain) IBOutlet UITextField *nickname;
+@property (nonatomic, retain) UIImage *userImage;
+
+- (BOOL) startMediaBrowserFromViewController: (UIViewController*) controller
+                               usingDelegate: (id <UIImagePickerControllerDelegate,
+                                               UINavigationControllerDelegate>) delegate;
 
 @end

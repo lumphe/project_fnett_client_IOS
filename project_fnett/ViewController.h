@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsView.h"
 
 @interface ViewController : UIViewController <NSStreamDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIScrollViewDelegate>{
 
@@ -23,6 +24,7 @@
     IBOutlet UIBarButtonItem *openclose;
     BOOL show;
     int labelY;
+    SettingsView *settings;
 }
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *openclose;
@@ -36,6 +38,7 @@
 
 -(void)sendMsgWithString:(NSString *)msg;
 -(void)appendTextView:(NSString *)text;
+-(void)userAppendTextView:(NSString *)text;
 -(IBAction)showPickerView:(id)sender;
 
 @end

@@ -11,6 +11,7 @@
 		11ACDFF0153A385900C3BC91 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */; };
 		11C05E6D153C89D200434DBC /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C05E6C153C89D200434DBC /* SettingsView.m */; };
 		11C05E78153E289B00434DBC /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C05E77153E289B00434DBC /* icon3.png */; };
+		11C05E8B153F5E1300434DBC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C05E8A153F5E1200434DBC /* MobileCoreServices.framework */; };
 		11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF021153A22B7004FFDEA /* UIKit.framework */; };
 		11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF023153A22B7004FFDEA /* Foundation.framework */; };
 		11CFF026153A22B7004FFDEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF025153A22B7004FFDEA /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 		11C05E6B153C89D200434DBC /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsView.h; path = project_fnett/SettingsView.h; sourceTree = "<group>"; };
 		11C05E6C153C89D200434DBC /* SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsView.m; path = project_fnett/SettingsView.m; sourceTree = "<group>"; };
 		11C05E77153E289B00434DBC /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon3.png; path = ../../../Desktop/icon3.png; sourceTree = "<group>"; };
+		11C05E8A153F5E1200434DBC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		11CFF01D153A22B7004FFDEA /* project_fnett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project_fnett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFF021153A22B7004FFDEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11CFF023153A22B7004FFDEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C05E8B153F5E1300434DBC /* MobileCoreServices.framework in Frameworks */,
 				11ACDFF0153A385900C3BC91 /* CoreFoundation.framework in Frameworks */,
 				11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */,
 				11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */,
@@ -109,6 +112,7 @@
 		11CFF020153A22B7004FFDEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11C05E8A153F5E1200434DBC /* MobileCoreServices.framework */,
 				11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */,
 				11CFF021153A22B7004FFDEA /* UIKit.framework */,
 				11CFF023153A22B7004FFDEA /* Foundation.framework */,
