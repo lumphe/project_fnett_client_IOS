@@ -2,14 +2,12 @@
 //  AppDelegate.h
 //  project_fnett
 //
-//  Created by Alexander Lumphé on 2012-04-14.
+//  Created by Alexander Lumphé on 2012-04-15.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface AppDelegate : NSObject
 
 @end
