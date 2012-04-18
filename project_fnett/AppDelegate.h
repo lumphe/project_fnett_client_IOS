@@ -1,13 +1,17 @@
 //
 //  AppDelegate.h
-//  project_fnett
+//  game
 //
-//  Created by Alexander Lumphé on 2012-04-15.
+//  Created by Alexander Lumphé on 2012-03-07.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface AppDelegate : NSObject
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSStreamDelegate>{
+    
+}
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

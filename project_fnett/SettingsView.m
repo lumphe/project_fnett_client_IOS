@@ -10,6 +10,8 @@
 
 @implementation SettingsView
 
+@synthesize ipadress, nickname;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,13 +38,22 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [ipadress setDelegate:self];
+    [nickname setDelegate:self];
+    NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
+    if(![[currentDefault stringForKey:@"ipadress"] isEqualToString:@""]){
+        [ipadress setText:[currentDefault stringForKey:@"ipadress"]];
+    }
+    if(![[currentDefault stringForKey:@"nickname"] isEqualToString:@""]){
+        [nickname setText:[currentDefault stringForKey:@"nickname"]];
+    }
 }
-*/
+
 
 - (void)viewDidUnload
 {
@@ -55,6 +66,19 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if([textField isEqual:ipadress]){
+        NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
+        [currentDefault setObject:ipadress.text forKey:@"ipadress"];
+        [textField resignFirstResponder];
+    }else if([textField isEqual:nickname]){
+        NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
+        [currentDefault setObject:nickname.text forKey:@"nickname"];
+        [textField resignFirstResponder];
+    }
+    return NO;
 }
 
 @end

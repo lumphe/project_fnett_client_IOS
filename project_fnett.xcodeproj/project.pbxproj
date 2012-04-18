@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11ACDFB9153A33C500C3BC91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ACDFB8153A33C500C3BC91 /* AppDelegate.m */; };
+		11ACDFF0153A385900C3BC91 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */; };
+		11C05E6D153C89D200434DBC /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C05E6C153C89D200434DBC /* SettingsView.m */; };
 		11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF021153A22B7004FFDEA /* UIKit.framework */; };
 		11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF023153A22B7004FFDEA /* Foundation.framework */; };
 		11CFF026153A22B7004FFDEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF025153A22B7004FFDEA /* CoreGraphics.framework */; };
 		11CFF02C153A22B7004FFDEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11CFF02A153A22B7004FFDEA /* InfoPlist.strings */; };
 		11CFF02E153A22B7004FFDEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF02D153A22B7004FFDEA /* main.m */; };
-		11CFF032153A22B8004FFDEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF031153A22B8004FFDEA /* AppDelegate.m */; };
 		11CFF035153A22B8004FFDEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CFF033153A22B8004FFDEA /* MainStoryboard.storyboard */; };
 		11CFF038153A22B8004FFDEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CFF037153A22B8004FFDEA /* ViewController.m */; };
 		11CFF040153A22B8004FFDEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */; };
@@ -33,24 +35,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11ACDFB7153A33C500C3BC91 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11ACDFB8153A33C500C3BC91 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		11C05E6B153C89D200434DBC /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsView.h; path = project_fnett/SettingsView.h; sourceTree = "<group>"; };
+		11C05E6C153C89D200434DBC /* SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsView.m; path = project_fnett/SettingsView.m; sourceTree = "<group>"; };
 		11CFF01D153A22B7004FFDEA /* project_fnett.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project_fnett.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFF021153A22B7004FFDEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11CFF023153A22B7004FFDEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		11CFF025153A22B7004FFDEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */ = {isa = PBXFileReference; path = "project_fnett-Info.plist"; sourceTree = "<group>"; };
+		11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "project_fnett-Info.plist"; sourceTree = "<group>"; };
 		11CFF02B153A22B7004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11CFF02D153A22B7004FFDEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		11CFF02F153A22B7004FFDEA /* project_fnett-Prefix.pch */ = {isa = PBXFileReference; path = "project_fnett-Prefix.pch"; sourceTree = "<group>"; };
-		11CFF030153A22B8004FFDEA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
-		11CFF031153A22B8004FFDEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11CFF02F153A22B7004FFDEA /* project_fnett-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "project_fnett-Prefix.pch"; sourceTree = "<group>"; };
 		11CFF034153A22B8004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		11CFF036153A22B8004FFDEA /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		11CFF036153A22B8004FFDEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		11CFF037153A22B8004FFDEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		11CFF03E153A22B8004FFDEA /* project_fnettTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = project_fnettTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		11CFF047153A22B8004FFDEA /* project_fnettTests-Info.plist */ = {isa = PBXFileReference; path = "project_fnettTests-Info.plist"; sourceTree = "<group>"; };
+		11CFF047153A22B8004FFDEA /* project_fnettTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "project_fnettTests-Info.plist"; sourceTree = "<group>"; };
 		11CFF049153A22B8004FFDEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		11CFF04B153A22B8004FFDEA /* project_fnettTests.h */ = {isa = PBXFileReference; path = project_fnettTests.h; sourceTree = "<group>"; };
+		11CFF04B153A22B8004FFDEA /* project_fnettTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = project_fnettTests.h; sourceTree = "<group>"; };
 		11CFF04C153A22B8004FFDEA /* project_fnettTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = project_fnettTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11ACDFF0153A385900C3BC91 /* CoreFoundation.framework in Frameworks */,
 				11CFF022153A22B7004FFDEA /* UIKit.framework in Frameworks */,
 				11CFF024153A22B7004FFDEA /* Foundation.framework in Frameworks */,
 				11CFF026153A22B7004FFDEA /* CoreGraphics.framework in Frameworks */,
@@ -81,9 +87,10 @@
 		11CFF012153A22B7004FFDEA = {
 			isa = PBXGroup;
 			children = (
+				11C05E6B153C89D200434DBC /* SettingsView.h */,
+				11C05E6C153C89D200434DBC /* SettingsView.m */,
 				11CFF027153A22B7004FFDEA /* project_fnett */,
 				11CFF045153A22B8004FFDEA /* project_fnettTests */,
-				11CFF020153A22B7004FFDEA /* Frameworks */,
 				11CFF01E153A22B7004FFDEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,19 +107,21 @@
 		11CFF020153A22B7004FFDEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */,
 				11CFF021153A22B7004FFDEA /* UIKit.framework */,
 				11CFF023153A22B7004FFDEA /* Foundation.framework */,
 				11CFF025153A22B7004FFDEA /* CoreGraphics.framework */,
 				11CFF03F153A22B8004FFDEA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		11CFF027153A22B7004FFDEA /* project_fnett */ = {
 			isa = PBXGroup;
 			children = (
-				11CFF030153A22B8004FFDEA /* AppDelegate.h */,
-				11CFF031153A22B8004FFDEA /* AppDelegate.m */,
+				11ACDFB7153A33C500C3BC91 /* AppDelegate.h */,
+				11ACDFB8153A33C500C3BC91 /* AppDelegate.m */,
 				11CFF033153A22B8004FFDEA /* MainStoryboard.storyboard */,
 				11CFF036153A22B8004FFDEA /* ViewController.h */,
 				11CFF037153A22B8004FFDEA /* ViewController.m */,
@@ -125,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */,
+				11CFF020153A22B7004FFDEA /* Frameworks */,
 				11CFF02A153A22B7004FFDEA /* InfoPlist.strings */,
 				11CFF02D153A22B7004FFDEA /* main.m */,
 				11CFF02F153A22B7004FFDEA /* project_fnett-Prefix.pch */,
@@ -258,8 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11CFF02E153A22B7004FFDEA /* main.m in Sources */,
-				11CFF032153A22B8004FFDEA /* AppDelegate.m in Sources */,
 				11CFF038153A22B8004FFDEA /* ViewController.m in Sources */,
+				11ACDFB9153A33C500C3BC91 /* AppDelegate.m in Sources */,
+				11C05E6D153C89D200434DBC /* SettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +440,7 @@
 				11CFF052153A22B8004FFDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		11CFF053153A22B8004FFDEA /* Build configuration list for PBXNativeTarget "project_fnettTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +449,7 @@
 				11CFF055153A22B8004FFDEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

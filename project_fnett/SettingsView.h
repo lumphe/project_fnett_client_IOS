@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsView : UIViewController
+@interface SettingsView : UITableViewController <UITextFieldDelegate>{
+    IBOutlet UITextField *ipadress;
+    IBOutlet UITextField *nickname;
+    
+}
+
+@property (nonatomic, retain) IBOutlet UITextField *ipadress;
+@property (nonatomic, retain) IBOutlet UITextField *nickname;
 
 @end
