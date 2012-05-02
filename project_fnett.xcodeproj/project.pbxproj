@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		117F4C251545E3B900F28835 /* 3610348-844296-nerwork-concept.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 117F4C241545E3B900F28835 /* 3610348-844296-nerwork-concept.jpeg */; };
+		117F4C32154B444D00F28835 /* privateConv.m in Sources */ = {isa = PBXBuildFile; fileRef = 117F4C31154B444D00F28835 /* privateConv.m */; };
 		11ACDFB9153A33C500C3BC91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ACDFB8153A33C500C3BC91 /* AppDelegate.m */; };
 		11ACDFF0153A385900C3BC91 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */; };
+		11BA0B8A1544676E00DB97BD /* mainViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BA0B891544676E00DB97BD /* mainViewcontroller.m */; };
 		11C05E6D153C89D200434DBC /* SettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C05E6C153C89D200434DBC /* SettingsView.m */; };
 		11C05E78153E289B00434DBC /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C05E77153E289B00434DBC /* icon3.png */; };
 		11C05E8B153F5E1300434DBC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C05E8A153F5E1200434DBC /* MobileCoreServices.framework */; };
@@ -37,9 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		117F4C241545E3B900F28835 /* 3610348-844296-nerwork-concept.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3610348-844296-nerwork-concept.jpeg"; sourceTree = "<group>"; };
+		117F4C30154B444D00F28835 /* privateConv.h */ = {isa = PBXFileReference; fileEncoding = 4; path = privateConv.h; sourceTree = "<group>"; };
+		117F4C31154B444D00F28835 /* privateConv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = privateConv.m; sourceTree = "<group>"; };
 		11ACDFB7153A33C500C3BC91 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11ACDFB8153A33C500C3BC91 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		11ACDFEF153A385900C3BC91 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		11BA0B881544676E00DB97BD /* mainViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewcontroller.h; sourceTree = "<group>"; };
+		11BA0B891544676E00DB97BD /* mainViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewcontroller.m; sourceTree = "<group>"; };
 		11C05E6B153C89D200434DBC /* SettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsView.h; path = project_fnett/SettingsView.h; sourceTree = "<group>"; };
 		11C05E6C153C89D200434DBC /* SettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsView.m; path = project_fnett/SettingsView.m; sourceTree = "<group>"; };
 		11C05E77153E289B00434DBC /* icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon3.png; path = ../../../Desktop/icon3.png; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 		11CFF012153A22B7004FFDEA = {
 			isa = PBXGroup;
 			children = (
+				117F4C30154B444D00F28835 /* privateConv.h */,
+				117F4C31154B444D00F28835 /* privateConv.m */,
+				11BA0B881544676E00DB97BD /* mainViewcontroller.h */,
+				11BA0B891544676E00DB97BD /* mainViewcontroller.m */,
 				11C05E6B153C89D200434DBC /* SettingsView.h */,
 				11C05E6C153C89D200434DBC /* SettingsView.m */,
 				11CFF027153A22B7004FFDEA /* project_fnett */,
@@ -140,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				11CFF029153A22B7004FFDEA /* project_fnett-Info.plist */,
+				117F4C241545E3B900F28835 /* 3610348-844296-nerwork-concept.jpeg */,
 				11C05E77153E289B00434DBC /* icon3.png */,
 				11CFF020153A22B7004FFDEA /* Frameworks */,
 				11CFF02A153A22B7004FFDEA /* InfoPlist.strings */,
@@ -213,7 +226,7 @@
 		11CFF014153A22B7004FFDEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 11CFF017153A22B7004FFDEA /* Build configuration list for PBXProject "project_fnett" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -241,6 +254,7 @@
 				11CFF02C153A22B7004FFDEA /* InfoPlist.strings in Resources */,
 				11CFF035153A22B8004FFDEA /* MainStoryboard.storyboard in Resources */,
 				11C05E78153E289B00434DBC /* icon3.png in Resources */,
+				117F4C251545E3B900F28835 /* 3610348-844296-nerwork-concept.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +293,8 @@
 				11CFF038153A22B8004FFDEA /* ViewController.m in Sources */,
 				11ACDFB9153A33C500C3BC91 /* AppDelegate.m in Sources */,
 				11C05E6D153C89D200434DBC /* SettingsView.m in Sources */,
+				11BA0B8A1544676E00DB97BD /* mainViewcontroller.m in Sources */,
+				117F4C32154B444D00F28835 /* privateConv.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

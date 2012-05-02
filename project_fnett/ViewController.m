@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "mainViewcontroller.h"
 
 @implementation ViewController
 
-@synthesize send, iStream, oStream, stream, textFromServer, message, progress, openclose;
+@synthesize send, iStream, oStream, stream, textFromServer, message, progress;
 
 - (void)didReceiveMemoryWarning
 {
@@ -25,24 +26,28 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIBarButtonItem *private = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(showPickerView)];
+    UIBarButtonItem *PM = [[UIBarButtonItem alloc] initWithTitle:@"PM" style:UIBarButtonItemStyleBordered target:self action:@selector(PM)];
+    NSArray *buttonArray = [NSArray arrayWithObjects:private, PM, nil];
+    self.navigationItem.rightBarButtonItems = buttonArray;
     state = 0;
-    commandsArray = [[NSMutableArray alloc] init];
+    /*commandsArray = [[NSMutableArray alloc] init];
     [commandsArray addObject:@"SET_USERNAME"];
     [commandsArray addObject:@"GET_STATE"];
     [commandsArray addObject:@"DISABLE_CONNECTION"];
     [commandsArray addObject:@"DISCONNECT_CONFIRMED"];
-    [commandsArray addObject:@""];
-    textFromServer.layer.borderWidth = 1.0f;
-    textFromServer.layer.borderColor = [[UIColor blackColor] CGColor];
+    [commandsArray addObject:@""];*/
+    messageView.layer.borderWidth = 1.0f;
+    messageView.layer.borderColor = [[UIColor blackColor] CGColor];
     [textFromServer setDelegate:self];
     [textFromServer setContentSize:CGSizeMake(320, 40)];
     [message setDelegate:self];
     [self.view bringSubviewToFront:message];
     [self.view bringSubviewToFront:send];
-    commands = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 416, 320, 200)];
+    /*commands = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 416, 320, 200)];
     commands.showsSelectionIndicator = YES;
     [commands setDelegate:self];
-    [self.view addSubview:commands];
+    [self.view addSubview:commands];*/
     [progress setCenter:textFromServer.center];
     labelY = 20;
 }
@@ -67,6 +72,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    //[self disconnenct];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -81,28 +87,39 @@
 }
 
 -(IBAction)sendMsg:(id)sender{
-    if([oStream hasSpaceAvailable] && state == 2){
+    if([oStream hasSpaceAvailable]){
         [self sendMsgWithString:message.text];
         NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
         [self userAppendTextView:[NSString stringWithFormat:@"%@: %@\n",[currentDefault stringForKey:@"nickname"], message.text]];
         [message setText:@""];
-    }else if(state == 0){
-        [progress startAnimating];
-        NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
-        CFReadStreamRef readStream;
-        CFWriteStreamRef writeStream;
-        CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)[currentDefault stringForKey:@"ipadress"], 30001, &readStream, &writeStream);
-        iStream = (__bridge NSInputStream *)readStream;
-        oStream = (__bridge NSOutputStream *)writeStream;
-        [iStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
-        [oStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
-        [iStream setDelegate:self];
-        [oStream setDelegate:self];
-        [iStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [oStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [iStream open];
-        [oStream open];
     }
+}
+
+-(void)connect:(mainViewcontroller *)viewcontroller{
+    NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
+    CFReadStreamRef readStream;
+    CFWriteStreamRef writeStream;
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)[currentDefault stringForKey:@"ipadress"], 30001, &readStream, &writeStream);
+    iStream = (__bridge NSInputStream *)readStream;
+    oStream = (__bridge NSOutputStream *)writeStream;
+    [iStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
+    [oStream setProperty:NSStreamNetworkServiceTypeVoIP forKey:NSStreamNetworkServiceType];
+    [iStream setDelegate:self];
+    [oStream setDelegate:self];
+    [iStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [oStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [iStream open];
+    [oStream open];
+    main = viewcontroller;
+}
+
+-(void)disconnenct{
+    [iStream close];
+    [oStream close];
+    [iStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [oStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    iStream = nil;
+    oStream = nil;
 }
 
 -(void)sendMsgWithString:(NSString *)msg{
@@ -125,13 +142,14 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if(show){
-        [self showPickerView:openclose];
+        [self showPickerView];
     }
     [UIView animateWithDuration:0.2 
                      animations:^{
-                         message.frame = CGRectOffset(message.frame, 0, -210);
-                         send.frame = CGRectOffset(send.frame, 0, -210);
-                         [textFromServer setFrame:CGRectMake(-1, -1, 322, 147)];
+                         messageView.frame = CGRectOffset(messageView.frame, 0, -215);
+                         [textFromServer setFrame:CGRectMake(0, 0, 320, 161)];
+                         CGPoint bottomOffset = CGPointMake(0, textFromServer.contentSize.height - self.textFromServer.bounds.size.height);
+                         [textFromServer setContentOffset:bottomOffset animated:YES];
                      }
                      completion:^(BOOL finished){
                          [progress setCenter:textFromServer.center];
@@ -141,9 +159,8 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [UIView animateWithDuration:0.2
                      animations:^{
-                         message.frame = CGRectOffset(message.frame, 0, 210);
-                         send.frame = CGRectOffset(send.frame, 0, 210);
-                         [textFromServer setFrame:CGRectMake(-1, -1, 322, 357)];
+                         messageView.frame = CGRectOffset(messageView.frame, 0, 215);
+                         [textFromServer setFrame:CGRectMake(0, 0, 320, 376)];
                      }
                      completion:^(BOOL finished){
                          [progress setCenter:textFromServer.center];
@@ -163,7 +180,6 @@
 			
 		case NSStreamEventOpenCompleted:
 			NSLog(@"Stream opened");
-            [self appendTextView:@"Stream opened\n"];
             [progress stopAnimating];
 			break;
 		case NSStreamEventHasBytesAvailable:
@@ -181,14 +197,14 @@
 						
 						if (nil != input) {
 							NSLog(@"server said: %@", input);
-                            [self appendTextView:input];
+                            //[self appendTextView:input];
                             NSString *comper = [input stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                            if([comper isEqualToString:@"HELLO_CLIENT"]){
-                                [self sendMsgWithString:@"ESTABLISH_CONNECTION"];
-                                state = 1;
-                            }else if([comper isEqualToString:@"CONNECTION_ESTABLISHED"]){
-                                [send setTitle:@"send" forState:UIControlStateNormal];
+                            if([comper isEqualToString:@"CONNECTION_ESTABLISHED"]){
                                 state = 2;
+                                if([oStream hasSpaceAvailable]){
+                                    [self sendMsgWithString:@"SET_USERNAME"];
+                                    state = 1337;
+                                }
                             }else if([comper isEqualToString:@"SEND_USERNAME"]){
                                 NSUserDefaults *currentDefault = [NSUserDefaults standardUserDefaults];
                                 if(![[currentDefault stringForKey:@"nickname"] isEqualToString:@""]){
@@ -196,6 +212,19 @@
                                 }else{
                                     [self sendMsgWithString:[currentDefault stringForKey:@"anonymous"]];
                                 }
+                            }else if([comper isEqualToString:@"SENDING_CONNECTED_CLIENTS"]){
+                                Connected = YES;
+                            }else if(Connected){
+                                connections = [input componentsSeparatedByString:@"\n"];
+                                for(int i = 0;i<connections.count-1;i++){
+                                    [self appendTextView:[connections objectAtIndex:i]];
+                                }
+                                [connectionsList reloadData];
+                                Connected = NO;
+                            }else if(!PC){
+                                [self appendTextView:input];
+                            }else{
+                                [conv appendTextView:input];
                             }
 						}
 					}
@@ -206,7 +235,6 @@
 			
 		case NSStreamEventErrorOccurred:
 			[progress stopAnimating];
-            [send setTitle:@"connect" forState:UIControlStateNormal];
             state = 0;
 			NSLog(@"Can not connect to the host!");
 			break;
@@ -214,7 +242,10 @@
         case NSStreamEventHasSpaceAvailable:
             NSLog(@"Has Space");
             if(state == 0){
-                [self sendMsgWithString:@"HELLO_SERVER"];
+                [self sendMsgWithString:@"ESTABLISH_CONNECTION"];
+                state = 1337;
+            }else if(state == 2){
+                [self sendMsgWithString:@"SET_USERNAME"];
                 state = 1337;
             }
             break;
@@ -253,7 +284,6 @@
     //Set message
     UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon3.png"]];
     [imageview setFrame:CGRectMake(3, 5, 15, 15)];
-    //[textFromServer addSubview:imageview];
     
     UILabel *temp = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 160, 40)];
     [temp setFont:[UIFont fontWithName:@"Arial" size:12]];
@@ -265,19 +295,13 @@
     [view.layer setCornerRadius:5.0f];
     [view.layer setBorderColor:[UIColor lightGrayColor].CGColor];
     [view.layer setBorderWidth:1.5f];
-    /*[view.layer setShadowColor:[UIColor blackColor].CGColor];
-    [view.layer setShadowOpacity:0.8];
-    [view.layer setShadowRadius:3.0];
-    [view.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
-    */
+
     labelY += view.frame.size.height+20;
     [view addSubview:temp];
     [view addSubview:imageview];
     
-    [textFromServer setContentSize:CGSizeMake(320, labelY+20)];
+    [textFromServer setContentSize:CGSizeMake(320, labelY)];
     [textFromServer addSubview:view]; 
-    
-    //textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
 }
 
 - (void)userAppendTextView:(NSString *)text{
@@ -302,42 +326,102 @@
     [view addSubview:temp];
     [view addSubview:imageview];
     
-    [textFromServer setContentSize:CGSizeMake(320, labelY+20)];
+    [textFromServer setContentSize:CGSizeMake(320, labelY)];
     [textFromServer addSubview:view];
     
     //textFromServer.text = [NSString stringWithFormat:@"%@ %@", textFromServer.text, text];
 }
 
-- (IBAction)showPickerView:(id)sender{
-    if([message isFirstResponder] && !show){
+- (void)showPickerView{
+    /*if([message isFirstResponder] && !show){
         [message resignFirstResponder];
     }
     if(!show){
         [UIView animateWithDuration:0.2
                          animations:^{
                              commands.frame = CGRectOffset(commands.frame, 0, -180); 
-                             message.frame = CGRectOffset(message.frame, 0, -175);
-                             send.frame = CGRectOffset(send.frame, 0, -175);
-                             [textFromServer setFrame:CGRectMake(-1, -1, 322, 182)];
+                             messageView.frame = CGRectOffset(messageView.frame, 0, -180);
+                             [textFromServer setFrame:CGRectMake(0, 0, 320, 196)];
+                             CGPoint bottomOffset = CGPointMake(0, textFromServer.contentSize.height - self.textFromServer.bounds.size.height);
+                             [textFromServer setContentOffset:bottomOffset animated:YES];
                          }
                          completion:^(BOOL finished){
                              show = YES;
-                             [openclose setTitle:@"close"];
                              [progress setCenter:textFromServer.center];
                          }];
     }else if(show){
         [UIView animateWithDuration:0.2
                          animations:^{
                              commands.frame = CGRectOffset(commands.frame, 0, 180); 
-                             message.frame = CGRectOffset(message.frame, 0, 175);
-                             send.frame = CGRectOffset(send.frame, 0, 175);
-                             [textFromServer setFrame:CGRectMake(-1, -1, 322, 357)];
+                             messageView.frame = CGRectOffset(messageView.frame, 0, 180);
+                             [textFromServer setFrame:CGRectMake(0, 0, 320, 376)];
                          }
                          completion:^(BOOL finished){
                              show = NO;
-                             [openclose setTitle:@"open"];
                              [progress setCenter:textFromServer.center];
                          }];
+    }*/
+    [self performSegueWithIdentifier:@"private" sender:nil];
+}
+
+-(void)PM{
+    if(PMView != nil){
+        [PMView removeFromSuperview];
+        PMView = nil;
+    }else{
+        [self sendMsgWithString:@"GET_CONNECTED_CLIENTS"];
+        [self PMView];
+    }
+}
+
+-(void)PMView{
+    PMView = [[UIView alloc] initWithFrame:CGRectMake(20, 5, 260, 300)];
+    [PMView setBackgroundColor:[UIColor whiteColor]];
+    PMView.layer.borderWidth = 3.0f;
+    PMView.layer.borderColor = [[UIColor blackColor] CGColor];
+    PMView.layer.cornerRadius = 15.0f;
+    
+    connectionsList = [[UITableView alloc] initWithFrame:CGRectMake(0, 5, 260, 290)];
+    [connectionsList setDelegate:self];
+    [connectionsList setDataSource:self];
+    
+    [self.view addSubview:PMView];
+    [PMView addSubview:connectionsList];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return connections.count-1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+    }
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.clipsToBounds = true;
+    [cell.textLabel setText:[connections objectAtIndex:indexPath.row]];
+    [cell.textLabel setTextColor:[UIColor blackColor]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@", [connections objectAtIndex:indexPath.row]);
+    [self performSelector:@selector(PM) withObject:nil afterDelay:0.5f];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"private"]){
+        conv = [segue destinationViewController];
+        conv.client = self;
+        [self sendMsgWithString:@"PRIVATE_CONVERSATION"];
+        PC = YES;
     }
 }
 
